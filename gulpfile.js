@@ -10,6 +10,7 @@ const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
 var dev = true;
+var port = process.env.PORT || 9000
 
 gulp.task('styles', () => {
   return gulp.src('app/styles/*.scss')
@@ -98,7 +99,7 @@ gulp.task('serve', () => {
   runSequence(['clean', 'wiredep'], ['styles', 'scripts', 'fonts'], () => {
     browserSync.init({
       notify: false,
-      port: 9000,
+      port: port,
       server: {
         baseDir: ['.tmp', 'app'],
         routes: {
@@ -123,7 +124,7 @@ gulp.task('serve', () => {
 gulp.task('serve:dist', ['default'], () => {
   browserSync.init({
     notify: false,
-    port: 9000,
+    port: port,
     server: {
       baseDir: ['dist']
     }
@@ -133,7 +134,7 @@ gulp.task('serve:dist', ['default'], () => {
 gulp.task('serve:test', ['scripts'], () => {
   browserSync.init({
     notify: false,
-    port: 9000,
+    port: port,
     ui: false,
     server: {
       baseDir: 'test',
