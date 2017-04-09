@@ -1,0 +1,37 @@
+// bower:scss
+@import "bower_components/bootstrap/scss/bootstrap.scss";
+// endbower
+
+$default-margin:1em;
+
+body {
+    background-color:#d1d2d4;
+    color:#000;
+    font-family: serif;
+    font-size:0.9em;
+}
+
+h5 {
+    font-size:1em;
+    font-variant-caps: small-caps;
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom:0em;
+}
+
+p {
+    font-size:1em;
+    line-height:1.3em;
+}
+
+img.logo-big {
+    width:70%;
+    display:block;
+    margin:$default-margin auto;
+}
+
+img.headliner {
+    width:100%;
+    display:block;
+    margin:$default-margin auto;
+}
